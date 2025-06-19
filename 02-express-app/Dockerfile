@@ -1,4 +1,4 @@
-FROM node:18.19.0-buster
+FROM node:22-alpine
 
 WORKDIR /app
 
@@ -6,8 +6,6 @@ COPY package*.json .
 
 RUN npm ci
 
-COPY index.js index.js
-
-EXPOSE 3000
+COPY . .
 
 CMD [ "node", "index.js" ]
