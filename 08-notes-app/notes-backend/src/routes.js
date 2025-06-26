@@ -34,7 +34,7 @@ noteRouter.post("/", async (req, res) => {
       try {
         const res = await axios({
           method: "GET",
-          url: noteBookAPI + `/${noteBookId}`,
+          url: `${noteBookAPI}/${noteBookId}`,
         });
         if (res.status === 404) {
           res.status(400).json({
